@@ -36,8 +36,8 @@ public class Data {
     }
 
     public static List<Question> loadCategory(String category) throws IOException {
-        List<String> vragen = readFile("data/" + category + "_vragen.txt");
-        List<String> antwoorden = readFile("data/" + category + "_antwoorden.txt");
+        List<String> vragen = readFile("./data/" + category + "_vragen.txt");
+        List<String> antwoorden = readFile("./data/" + category + "_antwoorden.txt");
         List<Question> result = new ArrayList<>();
         for (int i = 0; i < vragen.size(); i++) {
             result.add(new Question(vragen.get(i), antwoorden.get(i)));
@@ -82,6 +82,7 @@ public class Data {
     }
 
     public static void main(String[] args) {
+
         try {
             loadCategories();
         } catch (IOException e) {
