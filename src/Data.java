@@ -1,9 +1,12 @@
+import jdk.internal.util.xml.impl.Input;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -60,8 +63,8 @@ public class Data {
     }
 
     public static List<Question> loadCategory(String category) throws IOException {
-        List<String> vragen = readFile("./data/" + category + "_vragen.txt");
-        List<String> antwoorden = readFile("./data/" + category + "_antwoorden.txt");
+        List<String> vragen = readFile("data/" + category + "_vragen.txt");
+        List<String> antwoorden = readFile("data/" + category + "_antwoorden.txt");
         List<Question> result = new ArrayList<>();
         for (int i = 0; i < vragen.size(); i++) {
             result.add(new Question(vragen.get(i), antwoorden.get(i)));
@@ -70,8 +73,8 @@ public class Data {
     }
 
     public static List<String> readFile(String fileName) throws IOException {
-        File file = getResourceAsFile(fileName);
-        BufferedReader reader = new BufferedReader(new FileReader(file));
+        InputStream file = getResourceAsFile(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(file));
         List<String> result = new ArrayList<>();
         String line;
         while ((line = reader.readLine()) != null) {
@@ -80,28 +83,12 @@ public class Data {
         return result;
     }
 
-    public static File getResourceAsFile(String resourcePath) {
-        try {
-            InputStream in = ClassLoader.getSystemClassLoader().getResourceAsStream(resourcePath);
-            if (in == null) {
-                return null;
-            }
-
-            File tempFile = File.createTempFile(String.valueOf(in.hashCode()), ".tmp");
-            tempFile.deleteOnExit();
-
-            try (FileOutputStream out = new FileOutputStream(tempFile)) {
-                //copy stream
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-                while ((bytesRead = in.read(buffer)) != -1) {
-                    out.write(buffer, 0, bytesRead);
-                }
-            }
-            return tempFile;
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static InputStream getResourceAsFile(String resourcePath) {
+        InputStream in = ClassLoader.getSystemClassLoader().getResourceAsStream(resourcePath);
+        if (in == null) {
             return null;
         }
+
+        return in;
     }
 }

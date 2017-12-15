@@ -40,7 +40,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" text="Back" BorderPane.alignment="CENTER_LEFT" />
+      <Button mnemonicParsing="false" onAction="#backClicked" text="Back" BorderPane.alignment="CENTER_LEFT" />
    </bottom>
    <top>
       <Label alignment="CENTER" contentDisplay="CENTER" text="Kies een categorie" BorderPane.alignment="CENTER">
