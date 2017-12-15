@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CategorySelectionController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="888.0" prefWidth="1920.0" stylesheets="@main.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="algemeen" alignment="CENTER" mnemonicParsing="false" onAction="#algemeenClicked" text="Algemeen" />
+                  <Button fx:id="dieren" alignment="CENTER" mnemonicParsing="false" onAction="#dierenClicked" text="Dieren" />
+                  <Button fx:id="eten" alignment="CENTER" mnemonicParsing="false" onAction="#etenClicked" text="Eten" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="geschiedenis" alignment="CENTER" mnemonicParsing="false" onAction="#geschiedenisClicked" text="Geschiedenis" />
+                  <Button fx:id="geografie" alignment="CENTER" mnemonicParsing="false" onAction="#geografieClicked" text="Geografie" />
+                  <Button fx:id="muziek" alignment="CENTER" mnemonicParsing="false" onAction="#muziekClicked" text="Muziek" />
+                  <Button fx:id="nederland" alignment="CENTER" mnemonicParsing="false" onAction="#nederlandClicked" text="Nederland" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="sport" alignment="CENTER" mnemonicParsing="false" onAction="#sportClicked" text="Sport" />
+                  <Button fx:id="technologie" alignment="CENTER" mnemonicParsing="false" onAction="#technologieClicked" text="Technologie" />
+                  <Button fx:id="tv" alignment="CENTER" mnemonicParsing="false" onAction="#tvClicked" text="TV" />
+                  <Button fx:id="vervoer" alignment="CENTER" mnemonicParsing="false" onAction="#vervoerClicked" text="Vervoer" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="-100.0" top="-100.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <Button mnemonicParsing="false" text="Back" BorderPane.alignment="CENTER_LEFT" />
+   </bottom>
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="Kies een categorie" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="60.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>

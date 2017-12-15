@@ -5,34 +5,58 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Data {
 
-    private static List<Question> algemeen;
-    private static List<Question> dieren;
-    private static List<Question> eten;
-    private static List<Question> geschiedenis;
-    private static List<Question> geografie;
-    private static List<Question> muziek;
-    private static List<Question> nederland;
-    private static List<Question> sport;
-    private static List<Question> technologie;
-    private static List<Question> tv;
-    private static List<Question> vervoer;
+    public static Iterator<Question> algemeen;
+    public static Iterator<Question> dieren;
+    public static Iterator<Question> eten;
+    public static Iterator<Question> geschiedenis;
+    public static Iterator<Question> geografie;
+    public static Iterator<Question> muziek;
+    public static Iterator<Question> nederland;
+    public static Iterator<Question> sport;
+    public static Iterator<Question> technologie;
+    public static Iterator<Question> tv;
+    public static Iterator<Question> vervoer;
 
     public static void loadCategories() throws IOException {
-        algemeen = loadCategory("algemeen");
-        dieren = loadCategory("dieren");
-        eten = loadCategory("eten");
-        geschiedenis = loadCategory("geschiedenis");
-        geografie = loadCategory("geografie");
-        muziek = loadCategory("muziek");
-        nederland = loadCategory("nederland");
-        sport = loadCategory("sport");
-        technologie = loadCategory("technologie");
-        tv = loadCategory("tv");
-        vervoer = loadCategory("vervoer");
+        List<Question> algemeenList = loadCategory("algemeen");
+        Collections.shuffle(algemeenList);
+        algemeen = algemeenList.iterator();
+        List<Question> dierenList = loadCategory("dieren");
+        Collections.shuffle(dierenList);
+        dieren = dierenList.iterator();
+        List<Question> etenList = loadCategory("eten");
+        Collections.shuffle(etenList);
+        eten = etenList.iterator();
+        List<Question> geschiedenisList = loadCategory("geschiedenis");
+        Collections.shuffle(geschiedenisList);
+        geschiedenis = geschiedenisList.iterator();
+        List<Question> geografieList = loadCategory("geografie");
+        Collections.shuffle(geografieList);
+        geografie = geografieList.iterator();
+        List<Question> muziekList = loadCategory("muziek");
+        Collections.shuffle(muziekList);
+        muziek = muziekList.iterator();
+        List<Question> nederlandList = loadCategory("nederland");
+        Collections.shuffle(nederlandList);
+        nederland = nederlandList.iterator();
+        List<Question> sportList = loadCategory("sport");
+        Collections.shuffle(sportList);
+        sport = sportList.iterator();
+        List<Question> technologieList = loadCategory("technologie");
+        Collections.shuffle(technologieList);
+        technologie = technologieList.iterator();
+        List<Question> tvList = loadCategory("tv");
+        Collections.shuffle(tvList);
+        tv = tvList.iterator();
+        List<Question> vervoerList = loadCategory("vervoer");
+        Collections.shuffle(vervoerList);
+        vervoer = vervoerList.iterator();
     }
 
     public static List<Question> loadCategory(String category) throws IOException {
@@ -78,15 +102,6 @@ public class Data {
         } catch (IOException e) {
             e.printStackTrace();
             return null;
-        }
-    }
-
-    public static void main(String[] args) {
-
-        try {
-            loadCategories();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

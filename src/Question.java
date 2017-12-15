@@ -12,15 +12,8 @@ public class Question {
         return vraag;
     }
 
-    public void setVraag(String vraag) {
-        this.vraag = vraag;
-    }
-
     public String getAntwoord() {
         return antwoord;
     }
 
-    public void setAntwoord(String antwoord) {
-        this.antwoord = antwoord;
-    }
 }
