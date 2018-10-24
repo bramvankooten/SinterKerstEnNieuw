@@ -20,18 +20,18 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@main.css" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="vraagLabel" alignment="CENTER" text="De vraag die nu gesteld wordt is?">
+            <Label fx:id="vraagLabel" alignment="CENTER" text="De vraag die nu gesteld wordt is?" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="50.0" />
                </font>
             </Label>
-            <Button fx:id="antwoord" alignment="CENTER" mnemonicParsing="false" onAction="#antwoordButtonClicked" text="Antwoord" />
+            <Button fx:id="antwoord" alignment="CENTER" mnemonicParsing="false" onAction="#antwoordButtonClicked" text="Antwoord" textAlignment="CENTER" />
             <Label fx:id="antwoordLabel" alignment="CENTER" text="Het antwoord op de vraag is!" visible="false">
                <font>
                   <Font size="50.0" />
                </font>
             </Label>
-            <Button fx:id="next" alignment="CENTER" mnemonicParsing="false" text="Volgende Vraag" onAction="#nextClicked" visible="false" />
+            <Button fx:id="next" alignment="CENTER" mnemonicParsing="false" onAction="#nextClicked" text="Volgende Vraag" visible="false" />
          </children>
       </VBox>
    </center>
