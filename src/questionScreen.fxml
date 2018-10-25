@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuestionScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="pane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuestionScreenController">
    <top>
       <Label fx:id="categorieLabel" text="Categorie" BorderPane.alignment="CENTER">
          <font>
@@ -20,7 +20,7 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@main.css" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="vraagLabel" alignment="CENTER" text="De vraag die nu gesteld wordt is?" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="vraagLabel" alignment="CENTER" maxWidth="1700" text="De vraag die nu gesteld wordt is?" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="50.0" />
                </font>
